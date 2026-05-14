@@ -67,8 +67,14 @@
 
     h2:first-child { margin-top: 0; }
 
-    ol { padding-left: 22px; margin: 0; }
-    ol li { margin-bottom: 10px; }
+    ol {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    ol li {
+      margin-bottom: 10px;
+    }
 
     .status-box {
       background: #f0f7fc;
@@ -106,108 +112,18 @@
       color: #8a6500;
     }
 
-    #widget-status.loaded { background: #d4f4dd; color: #1d6c33; }
-    #widget-status.error { background: #ffd6d6; color: #8a1f1f; }
-
-    /* Password gate */
-    #password-gate {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 20px;
+    #widget-status.loaded {
+      background: #d4f4dd;
+      color: #1d6c33;
     }
 
-    .gate-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 36px 40px;
-      max-width: 420px;
-      width: 100%;
-      box-shadow: 0 8px 24px rgba(0, 60, 113, 0.08);
+    #widget-status.error {
+      background: #ffd6d6;
+      color: #8a1f1f;
     }
-
-    .gate-card h2 {
-      margin: 0 0 8px 0;
-      color: var(--cellgate-blue);
-      font-size: 22px;
-    }
-
-    .gate-card p {
-      margin: 0 0 24px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .gate-card label {
-      display: block;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .gate-card input[type="password"] {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-
-    .gate-card input[type="password"]:focus {
-      border-color: var(--cellgate-accent);
-    }
-
-    .gate-card button {
-      width: 100%;
-      margin-top: 16px;
-      padding: 11px 16px;
-      background: var(--cellgate-blue);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.15s;
-    }
-
-    .gate-card button:hover { background: var(--cellgate-accent); }
-
-    .gate-error {
-      color: #c0392b;
-      font-size: 13px;
-      margin-top: 12px;
-      min-height: 18px;
-    }
-
-    body.locked .container { display: none; }
   </style>
 </head>
-<body class="locked">
-
-  <div id="password-gate">
-    <div class="gate-card">
-      <h2>CellGate Bot Test</h2>
-      <p>This is a restricted test page. Please enter the password to continue.</p>
-      <form id="gate-form" onsubmit="return checkPassword(event)">
-        <label for="pwd">What is the password?</label>
-        <input type="password" id="pwd" autofocus autocomplete="off" />
-        <div class="gate-error" id="gate-error"></div>
-        <button type="submit">Enter</button>
-      </form>
-    </div>
-  </div>
-
+<body>
   <div class="container">
     <header>
       <h1>CellGate Bot Test Page</h1>
@@ -246,32 +162,12 @@
     </footer>
   </div>
 
-  <script>
-    function checkPassword(event) {
-      event.preventDefault();
-      var entered = document.getElementById('pwd').value.trim().toLowerCase();
-      var errorEl = document.getElementById('gate-error');
-
-      if (entered === 'cooper') {
-        document.body.classList.remove('locked');
-        document.getElementById('password-gate').style.display = 'none';
-        loadEmbeddedMessaging();
-      } else {
-        errorEl.textContent = 'Incorrect password. Please try again.';
-        document.getElementById('pwd').value = '';
-        document.getElementById('pwd').focus();
-      }
-      return false;
-    }
-
-    function loadEmbeddedMessaging() {
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659/assets/js/bootstrap.min.js';
-      script.onload = initEmbeddedMessaging;
-      document.body.appendChild(script);
-    }
-
+  <!-- ============================================================ -->
+  <!-- EMBEDDED MESSAGING CHAT WIDGET                                -->
+  <!-- Deployment: CellGate_Bot_Test_GitHub_Pages_Test               -->
+  <!-- Sandbox: joshdev                                              -->
+  <!-- ============================================================ -->
+  <script type="text/javascript">
     function initEmbeddedMessaging() {
       try {
         embeddedservice_bootstrap.settings.language = 'en_US';
@@ -298,6 +194,11 @@
         }
       }
     }
+  </script>
+  <script
+    type="text/javascript"
+    src="https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659/assets/js/bootstrap.min.js"
+    onload="initEmbeddedMessaging()">
   </script>
 </body>
 </html>
