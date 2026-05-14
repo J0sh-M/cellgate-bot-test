@@ -127,7 +127,7 @@
   <div class="container">
     <header>
       <h1>CellGate Bot Test Page</h1>
-      <p>Embedded Messaging v2 — Cooper Einstein Bot — Sandbox (joshdev)</p>
+      <p>Embedded Messaging v2 — Cooper Einstein Bot — GitHub Pages Deployment</p>
     </header>
 
     <main>
@@ -152,17 +152,8 @@
       <h2>What to Verify in Salesforce</h2>
       <ol>
         <li>A new <strong>Messaging Session</strong> record is created (ID starts with <code>0M...</code>)</li>
-        <li>The session's <strong>Department__c</strong> field is populated (if Update Messaging Session flow is in place)</li>
         <li>The session routes to the correct queue based on the department selection</li>
         <li>The rep can accept and join the same conversation seamlessly</li>
-      </ol>
-
-      <h2>Troubleshooting</h2>
-      <ol>
-        <li>Widget not appearing? Check browser console for errors (F12 → Console tab)</li>
-        <li>Check that this domain is added to Salesforce CORS allowlist</li>
-        <li>Check that the Embedded Service Deployment is Published</li>
-        <li>Check that the bot is Active</li>
       </ol>
     </main>
 
@@ -173,7 +164,7 @@
 
   <!-- ============================================================ -->
   <!-- EMBEDDED MESSAGING CHAT WIDGET                                -->
-  <!-- Generated for: CellGate_Einstein_Bot_Test deployment          -->
+  <!-- Deployment: CellGate_Bot_Test_GitHub_Pages_Test               -->
   <!-- Sandbox: joshdev                                              -->
   <!-- ============================================================ -->
   <script type="text/javascript">
@@ -182,14 +173,13 @@
         embeddedservice_bootstrap.settings.language = 'en_US';
         embeddedservice_bootstrap.init(
           '00DOt00000wuDQz',
-          'CellGate_Einstein_Bot_Test',
-          'https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTest1778767507340',
+          'CellGate_Bot_Test_GitHub_Pages_Test',
+          'https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659',
           {
             scrt2URL: 'https://cellgate--joshdev.sandbox.my.salesforce-scrt.com'
           }
         );
 
-        // Update the status indicator on the page once init succeeds
         var statusEl = document.getElementById('widget-status');
         if (statusEl) {
           statusEl.textContent = 'Initialized — widget should appear shortly';
@@ -207,7 +197,7 @@
   </script>
   <script
     type="text/javascript"
-    src="https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTest1778767507340/assets/js/bootstrap.min.js"
+    src="https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659/assets/js/bootstrap.min.js"
     onload="initEmbeddedMessaging()">
   </script>
 </body>
