@@ -127,12 +127,12 @@
   <div class="container">
     <header>
       <h1>CellGate Bot Test Page</h1>
-      <p>Embedded Messaging v2 — Cooper Einstein Bot — GitHub Pages Deployment</p>
+      <p>Embedded Messaging v2 — CellGate Website Support Enhanced Chat Bot — GitHub Pages Deployment</p>
     </header>
 
     <main>
       <h2>What This Page Is For</h2>
-      <p>This page hosts the Embedded Messaging widget so the Cooper Einstein Bot routing flow can be tested end to end. The chat widget should appear in the bottom-right corner.</p>
+      <p>This page hosts the Embedded Messaging widget so the CellGate Website Support Enhanced Chat Bot routing flow can be tested end to end. The chat widget should appear in the bottom-right corner.</p>
 
       <div class="status-box">
         <strong>Widget Status:</strong> <span id="widget-status">Loading...</span>
@@ -142,7 +142,7 @@
       <ol>
         <li>Wait for the chat widget to appear (bottom-right of the page)</li>
         <li>Click the widget to open it</li>
-        <li>The Cooper Einstein Bot should greet you with menu options</li>
+        <li>The bot should greet you with menu options</li>
         <li>Select a department (e.g., Customer Support)</li>
         <li>Bot will route you to the appropriate queue</li>
         <li>As the rep (with status <code>Available For Messaging</code>), accept the incoming work in Service Console</li>
@@ -164,19 +164,20 @@
 
   <!-- ============================================================ -->
   <!-- EMBEDDED MESSAGING CHAT WIDGET                                -->
-  <!-- Deployment: CellGate_Bot_Test_GitHub_Pages_Test               -->
-  <!-- Sandbox: joshdev                                              -->
+  <!-- Deployment: CellGate_Website_Support_Enhanced_Chat_Bot         -->
+  <!-- Org ID: 00DOt00000yzQeJ                                       -->
+  <!-- Sandbox: full                                                 -->
   <!-- ============================================================ -->
   <script type="text/javascript">
     function initEmbeddedMessaging() {
       try {
         embeddedservice_bootstrap.settings.language = 'en_US';
         embeddedservice_bootstrap.init(
-          '00DOt00000wuDQz',
-          'CellGate_Bot_Test_GitHub_Pages_Test',
-          'https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659',
+          '00DOt00000yzQeJ',
+          'CellGate_Website_Support_Enhanced_Chat_Bot',
+          'https://cellgate--full.sandbox.my.site.com/ESWCellGateWebsiteSuppo1787940745385',
           {
-            scrt2URL: 'https://cellgate--joshdev.sandbox.my.salesforce-scrt.com'
+            scrt2URL: 'https://cellgate--full.sandbox.my.salesforce-scrt.com'
           }
         );
 
@@ -197,7 +198,7 @@
   </script>
   <script
     type="text/javascript"
-    src="https://cellgate--joshdev.sandbox.my.site.com/ESWCellGateBotTestGitH1778787640659/assets/js/bootstrap.min.js"
+    src="https://cellgate--full.sandbox.my.site.com/ESWCellGateWebsiteSuppo1787940745385/assets/js/bootstrap.min.js"
     onload="initEmbeddedMessaging()">
   </script>
 </body>
